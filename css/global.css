@@ -1,0 +1,163 @@
+/*  GLOBAL + RESET  */
+
+*, ::after, ::before {
+    box-sizing: unset; 
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    box-sizing: unset;
+}
+
+body { 
+    color: var(--main-text-color);
+    background-color: var(--main-bg-color);
+    font-family: Montserrat, sans-serif;
+
+    margin: 0;
+}
+
+.section {
+    padding-bottom: 72px;
+}
+
+.container {
+    max-width: 335px;
+
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wrapper {
+    display: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/*  TITLE  */
+.title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.20;
+
+    text-align: center;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+
+    color: var(--main-text-color);
+
+    margin-bottom: 32px;
+}
+
+.accent {
+    color: var(--accent-color);
+}
+
+h3 {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.33;
+
+    color: var(--main-text-color);
+}
+
+p {
+    font-size: 14px;
+    line-height: 1.29;
+
+    letter-spacing: -0.02em;
+
+    color: var(--main-text-color);
+}
+
+/*  BUTTONS  */
+.button {
+    display: block;
+
+    background-color: var(--accent-color);
+    color: var(--second-text-color);
+
+    border: 1px solid transparent;
+    border-radius: 100px;
+
+    margin: 32px auto 0 auto;
+    padding: 12px 28px;
+
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+
+    cursor: pointer;
+    transition: background var(--duration) var(--cubic-bezier),
+                color var(--duration) var(--cubic-bezier);
+}
+
+.button:hover,
+.button:focus {
+    background-color: var(--second-accent-color);
+    color: var(--accent-color);
+}
+
+.review-button {
+    background-color: transparent;
+    color: var(--main-text-color);
+
+    border: 1px solid var(--accent-color);
+}
+
+.review-button:hover,
+.review-button:focus {
+    background-color: var(--accent-color);
+    color: var(--second-text-color);
+}
+
+
+
+/*  SECRET FLIP-CARD  */
+.flip-card {
+    perspective: 1500px;
+}
+  
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 400ms var(--cubic-bezier);
+    transform-style: preserve-3d;
+}
+  
+.flip-card-back {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: rotateY(180deg) translate(50%, -50%);
+    backface-visibility: hidden;
+}
+  
+.flip-card-front {
+    backface-visibility: hidden;
+}
+  
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(-180deg);
+}
